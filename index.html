@@ -1,45 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Davetiye</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Davet</title>
 <style>
-:root{--bg:#0f172a;--card:#0b1220;--accent:#7dd3fc;--text:#e6eef8}
-*{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#071027 0%, #0f172a 100%);color:var(--text)}
-.container{min-height:100%;display:flex;align-items:center;justify-content:center;padding:24px}
-.card{width:100%;max-width:520px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:28px;box-shadow:0 8px 30px rgba(2,6,23,0.6);border:1px solid rgba(125,211,252,0.06)}
-h1{margin:0 0 12px;font-size:20px;letter-spacing:0.2px}
-p{margin:0 0 20px;line-height:1.5;color:rgba(230,238,248,0.95)}
-.button{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;background:linear-gradient(90deg,var(--accent),#60a5fa);color:#042033;border:none;border-radius:10px;font-weight:600;text-decoration:none;cursor:pointer;box-shadow:0 6px 18px rgba(29,78,216,0.12);transition:transform .12s ease,box-shadow .12s ease}
-.button:active{transform:translateY(1px)}
-.small{font-size:13px;color:rgba(230,238,248,0.7);margin-top:12px}
-.footer{margin-top:18px;font-size:12px;color:rgba(230,238,248,0.6);text-align:right}
-.icon{width:18px;height:18px;display:inline-block}
-.center{display:flex;align-items:center;gap:12px}
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: #0e1525;
+        color: #eef3fc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
+    .card {
+        width: 100%;
+        max-width: 480px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 14px;
+        padding: 22px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+    }
+    h2 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-size: 22px;
+    }
+    p {
+        line-height: 1.55;
+        margin-bottom: 16px;
+    }
+    button {
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+        background: #7dc4ff;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        color: #072841;
+        cursor: pointer;
+        transition: 0.15s;
+        margin-top: 10px;
+    }
+    button:active {
+        transform: scale(0.97);
+    }
+    .info {
+        margin-top: 18px;
+        padding: 14px;
+        background: rgba(255,255,255,0.08);
+        border-radius: 10px;
+        font-size: 14px;
+        line-height: 1.45;
+    }
 </style>
 </head>
 <body>
-<div class="container">
-  <div class="card" role="main">
-    <div class="center">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 6v2a4 4 0 004 4v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <h1>Doğum Günü Daveti</h1>
+
+<div class="card">
+    <h2>Doğum Günü Daveti</h2>
+    <p>Kerem ve Deniz'in doğum günü bugün saat 15.00'da olacaktır. Eğer gelemeyecekseniz aşağıdaki butondan mesaj gönderebilirsiniz.</p>
+
+    <button onclick="window.location.href='https://lcd.zamanlayici.online';">
+        Mesaj Gönder
+    </button>
+
+    <div class="info">
+        Siteye gittikten sonra en üst bölümdeki <b>Özel Metin Gönder</b> kısmına geliniz.<br><br>
+        Her satıra en fazla <b>16 karakter</b> giriniz ve <b>Gönder</b> butonuna basınız.<br><br>
+        Mesajınız bana bilgisayara bağlı ekran aracılığıyla ulaşacaktır.<br>
+        Her mesaj geldiğinde bilgisayara bağlı hoparlörden <b>uyarı sesi</b> çıkacaktır.
     </div>
-    <p id="message">Kerem ve Denizin doğum günü bugün saat 15.00'da olacaktır. Eğer gelemeyecekseniz bana aşağıdaki butondan mesaj gönderebilirsiniz.</p>
-    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-      <button class="button" id="sendBtn" aria-label="Mesaj gönder">Mesaj Gönder →</button>
-      <span class="small">Butona basınca yeni sekmede lcd.zamanlayici.online açılacaktır.</span>
-    </div>
-    <div class="footer">İyi eğlenceler 🎉</div>
-  </div>
 </div>
-<script>
-document.getElementById('sendBtn').addEventListener('click', function(){
-  // Yeni sekmede siteyi açar:
-  window.open('https://lcd.zamanlayici.online', '_blank', 'noopener');
-});
-</script>
+
 </body>
 </html>
